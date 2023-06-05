@@ -2,8 +2,7 @@ const sheets = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/
  //if you have changed your sheet name then replace the below Sheet1 with your sheet name
 const sheet = sheets.getSheetByName("Form Answers");
 
-function doPost(e){
-  let data = e.parameter;
+function doInsertData(data){
   if(data.Name && data.Email && data.Message){
     sheet.appendRow([data.Name,data.Email,data.Message]);
     return ContentService.createTextOutput(`Your message was successfully sent to the Googlesheet database!, name: ${data.Name},email: ${data.Email},message: ${data.Message}`);
@@ -12,5 +11,5 @@ function doPost(e){
 }
 
 function doGet(){
-  return HtmlService.createTemplateFromFile("index").evaluate().addMetaTag('viewport', 'width=device-width, initial-scale=1');
+  return HtmlService.createTemplateFromFile("index").evaluate().addMetaTag('viewport', 'width=device-width, initial-scale=1').setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }

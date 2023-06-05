@@ -28,3 +28,29 @@ button:hover {
   color: white;
   cursor: pointer;
 }
+
+.error-banner {
+  margin-top: 20px;
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.error-message {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.success-banner {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.success-message {
+  font-size: 18px;
+  font-weight: bold;
+}
